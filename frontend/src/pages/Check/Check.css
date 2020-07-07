@@ -1,0 +1,147 @@
+.Check {
+  background-color: #cccbcb;
+  height: 100vh;
+  margin: 0;
+  
+}
+
+/* Top Check */
+.titlechecks {
+  margin-right: auto;
+}
+
+.TopCheck h1 {
+  color: #ff9100;
+}
+.TopCheck a {
+  margin: 1vh;
+}
+
+.TopCheck {
+  padding: 7vh 7vh 3vh 7vh;
+  display: flex;
+  /* position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+   */
+}
+
+/* Main check */
+
+.check_main {
+ 
+  display: grid;
+  grid-gap: 20px 20px;
+  grid-template-columns: auto;
+  padding: 5vh 5vh 15vh 5vh;
+  
+}
+
+.check_main .onepizzabox {
+  text-align: center;
+  display: grid;
+  grid-gap: 1px 1px;
+  grid-template-columns: auto auto auto auto auto auto;
+
+  border-radius: 20px;
+  background-color: white;
+}
+
+.check_main .onepizzabox .TotalPizzaSelects {
+  color: #ff9100;
+  font-size: 7vh;
+  font-weight: 900;
+}
+
+.check_main .onepizzabox button {
+  border: none;
+  background-color: transparent;
+}
+
+.check_main .onepizzabox button:focus {
+  outline: 0;
+}
+.pizzaItemsSelect {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.pizzaItemsSelect li {
+  margin: 0 9px 0 0;
+  list-style: none;
+}
+
+.check_main .onepizzabox .pizzanameandprice {
+  position: relative;
+  bottom: -2vh;
+  display: flex;
+}
+
+.check_main .onepizzabox .pizzanameandprice img {
+  margin: 10px;
+  border-radius: 50%;
+  width: 85px;
+  height: 85px;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.check_main .onepizzabox .pizzanameandprice .pizzanameandpricemain {
+  position: relative;
+  bottom: -1vh;
+}
+.check_main .onepizzabox .pizzanameandprice .pizzanameandpricemain h2 {
+  color: #ff9100;
+  font-size: 20px;
+}
+
+/* After main check */
+
+.check_Reorder {
+  padding: 6vh 5vh;
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+}
+
+.check_Reorder .Reorder {
+  border: 2px solid #ff9100;
+  text-decoration: none;
+  color: #ff9100;
+  margin-right: auto;
+  background-color: #fff;
+  padding: 0 3vh;
+  border-radius: 8px;
+}
+
+.check_Reorder .Checkvalid {
+  text-decoration: none;
+  color: white;
+  margin-left: auto;
+  background-color: #ff9100;
+  padding: 0 3vh;
+  border-radius: 8px;
+}
+
+/* Footer check */
+
+.check_footer {
+  bottom: -.4vh;
+  position: relative;
+  color: white;
+  padding: 3vh 5vh;
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+  background-color: #333333;
+}
+.check_footer .TotalPrice {
+  margin-right: auto;
+}
+
+.check_footer .TotalPizza {
+  margin-left: auto;
+}
+
+.remove {
+  text-decoration: line-through;
+}

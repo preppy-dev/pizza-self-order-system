@@ -1,0 +1,33 @@
+.Sabores {
+  background-color: #e4e4e4;
+}
+.titlesabores {
+  margin-right: auto;
+}
+
+.TopSabores h1 {
+  color: #ff9100;
+}
+.TopSabores a {
+  margin: 1.5vh;
+}
+
+.TopSabores {
+  padding: 7vh;
+  display: flex;
+}
+
+.sabores_main {
+  min-height: 100vh;
+}
+.AllSabores {
+  display: grid;
+  grid-gap: 10vh 10vh;
+  grid-template-columns: auto auto auto auto;
+  align-items: center;
+}
+
+.saborespagination {
+  background-color: #fff;
+  padding: 1.5vh 0 1.5vh 0;
+}

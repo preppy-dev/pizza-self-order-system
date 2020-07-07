@@ -1,0 +1,75 @@
+.Sabores {
+  background-color: #e4e4e4;
+}
+.titlesabores {
+  margin-right: auto;
+}
+
+.TopSabores h1 {
+  color: #ff9100;
+}
+.TopSabores a {
+  margin: 1.5vh;
+}
+
+.TopSabores {
+  padding: 7vh;
+  display: flex;
+}
+
+.sabores_main {
+  min-height: 100vh;
+}
+
+.AllSabores {
+  display: grid;
+  grid-gap: 4px;
+  grid-template-columns: auto auto auto auto;
+  align-items: center;
+}
+
+.ant-pagination {
+  text-align: center;
+  list-style-type: none;
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+.ant-pagination .ant-pagination-simple-pager,
+input {
+  background-color: #fff;
+  color: #fff;
+}
+
+.ant-pagination svg {
+  width: 80px;
+  height: 60px;
+  color: #ff9100;
+  font-weight: bolder;
+  font-size: x-large;
+  -ms-transform: rotate(90deg); /* IE 9 */
+  transform: rotate(90deg);
+}
+
+.ant-pagination .ant-pagination-simple-pager,
+input {
+  border: none;
+}
+
+.saborespagination {
+  background-color: #fff;
+  padding: 1.5vh 0 1.5vh 0;
+}
+
+@media screen and (max-width: 1024px) {
+  .sabores_main {
+    min-height: 100vh;
+  }
+  .AllSabores {
+    display: grid;
+    grid-gap: 0vh;
+    grid-template-columns: auto auto auto auto;
+    align-items: center;
+  }
+}

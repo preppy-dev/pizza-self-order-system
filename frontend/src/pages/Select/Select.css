@@ -1,0 +1,62 @@
+.Select {
+  font-family: "Montserrat", sans-serif;
+  height: 100vh;
+  margin: 0;
+  background: url(../../assets/Tipobg.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  color: white;
+}
+
+.selectmain {
+  position: relative;
+  bottom: -5vh;
+}
+
+.Select_head .Selectreturn {
+  -moz-text-shadow: 7px 7px rgba(0, 0, 0, 0.3);
+  -webkit-text-shadow: 7px 7px rgba(0, 0, 0, 0.3);
+  text-shadow: 8px 8px rgba(0, 0, 0, 0.3);
+
+  position: relative;
+  left: 9vh;
+}
+
+.Select_head h1 {
+  text-align: center;
+  font-size: 8vh;
+  -moz-text-shadow: 8px 8px rgba(0, 0, 0, 0.3);
+  -webkit-text-shadow: 8px 8px rgba(0, 0, 0, 0.3);
+  text-shadow: 8px 8px rgba(0, 0, 0, 0.3);
+}
+
+.selects {
+  text-align: center;
+  font-size: 3.5vh;
+  font-weight: bold;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.select_ {
+  margin: 2vh 12vh;
+}
+
+@media screen and (max-width: 1024px) and (max-height: 768px) {
+  .Select_head h1 {
+    font-size: 7vh;
+  }
+
+  .selects {
+    font-size: 4vh;
+    font-weight: bold;
+  }
+  .Selecimg {
+    width: 500px;
+  }
+}

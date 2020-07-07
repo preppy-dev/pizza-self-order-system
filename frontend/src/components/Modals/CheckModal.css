@@ -1,0 +1,146 @@
+.CheckitModal {
+  font-family: "Montserrat", sans-serif;
+  z-index: 10;
+  width: 100%;
+  top: 50vh;
+  left: 50%;
+  position: fixed;
+  padding: 2.5vh 20px 20px 20px;
+  height: 100vh;
+  transform: translate(-50%, -50%);
+
+  background-color: rgb(0, 0, 0, 0.3);
+
+  text-align: center;
+}
+
+.maincheckitmodal {
+  border-radius: 8px;
+  margin: 0vh 8vh;
+  background-color: white;
+  padding-bottom: 20px;
+  padding-top: 10px;
+}
+
+.CheckitModalhead {
+  padding: 4vh 10vh 10vh 2vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.CheckitModalhead img {
+  margin-bottom: 4vh;
+}
+
+.CheckitModalhead h1 {
+  font-size: 48px;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #ff9100;
+}
+
+.CheckitModalbt {
+  text-decoration: none;
+  padding: 0vh 20vh 5vh 20vh;
+  text-decoration: none;
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.CheckitModalbt .NoAssabt {
+  width: 400px;
+  border-radius: 10px;
+  color: white;
+  padding: 1vh 6vh;
+  text-decoration: none;
+  background-color: #ff0e0e;
+  margin-right: auto;
+}
+
+.CheckitModalbt .Checkitbt {
+  width: 400px;
+  border-radius: 10px;
+  color: white;
+  padding: 1vh 6vh;
+  text-decoration: none;
+  margin-left: auto;
+  background-color: #06b700;
+}
+
+@media screen and (max-width: 1024px) and (max-height: 768px) {
+  .CheckitModal {
+    width: 100%;
+    top: 50vh;
+    left: 50%;
+    position: fixed;
+    padding: 2.5vh 20px 20px 20px;
+    height: 100vh;
+    transform: translate(-50%, -50%);
+
+    text-align: center;
+  }
+
+  .maincheckitmodal {
+    border-radius: 8px;
+    margin: 15vh 8vh 2vh 8vh;
+    background-color: white;
+    padding-bottom: 20px;
+    padding-top: 10px;
+  }
+
+  .CheckitModalhead {
+    padding: 4vh 10vh 10vh 2vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .CheckitModalhead img {
+    margin-bottom: 4vh;
+  }
+
+  .CheckitModalhead h1 {
+    font-size: 38px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #ff9100;
+  }
+
+  .CheckitModalbt {
+    text-decoration: none;
+    padding: 0vh 4vh 6vh 4vh;
+    display: flex;
+
+    justify-content: center;
+    text-align: center;
+    color: white;
+  }
+
+  .CheckitModalbt .NoAssabt {
+    width: 700px;
+    border-radius: 10px;
+    color: white;
+    padding: 1vh 4vh;
+    text-decoration: none;
+    background-color: #ff0e0e;
+    margin-right: auto;
+    margin-right: 5px;
+  }
+
+  .CheckitModalbt .Checkitbt {
+    width: 700px;
+    border-radius: 10px;
+    color: white;
+    padding: 1vh 4vh;
+    text-decoration: none;
+    margin-left: auto;
+    margin-left: 5px;
+    background-color: #06b700;
+  }
+}

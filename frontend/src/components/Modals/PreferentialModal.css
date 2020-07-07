@@ -1,0 +1,149 @@
+.PreferentialModal {
+  font-family: "Montserrat", sans-serif;
+
+  width: 100%;
+  top: 50vh;
+  left: 50%;
+  position: fixed;
+  padding: 2.5vh 20px 20px 20px;
+  height: 100vh;
+  transform: translate(-50%, -50%);
+
+  background-color: rgb(0, 0, 0, 0.3);
+
+  text-align: center;
+}
+
+.mainprefmodal {
+  border-radius: 8px;
+  margin: 10vh 6vh;
+  background-color: aliceblue;
+  padding-bottom: 20px;
+  padding-top: 10px;
+}
+
+.PreferentialModalhead {
+  padding: 4vh 10vh 10vh 2vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.PreferentialModalhead img {
+  margin-bottom: 4vh;
+}
+
+.PreferentialModalhead h1 {
+  font-size: 48px;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #ff9100;
+}
+
+.PreferentialModalbt {
+  text-decoration: none;
+  padding: 0vh 20vh 5vh 20vh;
+  text-decoration: none;
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.PreferentialModalbt .Cancelbt {
+  width: 300px;
+  border-radius: 10px;
+  color: white;
+  padding: 1vh 6vh;
+  text-decoration: none;
+  background-color: #ff0e0e;
+  margin-right: auto;
+}
+
+.PreferentialModalbt .Confirmarbt {
+  width: 300px;
+  border-radius: 10px;
+  color: white;
+  padding: 1vh 6vh;
+  text-decoration: none;
+  margin-left: auto;
+  background-color: #06b700;
+}
+
+@media screen and (max-width: 1024px) and (max-height: 768px) {
+  .PreferentialModal {
+    width: 100%;
+    top: 50vh;
+    left: 50%;
+    position: fixed;
+    padding: 2.5vh 20px 20px 20px;
+    height: 100vh;
+    transform: translate(-50%, -50%);
+
+    background-color: rgb(0, 0, 0, 0.3);
+
+    text-align: center;
+  }
+
+  .mainprefmodal {
+    border-radius: 8px;
+    margin: 15vh 9vh;
+    background-color: white;
+    padding-bottom: 1px;
+    padding-top: 1px;
+  }
+
+  .PreferentialModalhead {
+    padding: 4vh 5vh 5vh 4vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .PreferentialModalhead img {
+    margin-bottom: 1vh;
+  }
+
+  .PreferentialModalhead h1 {
+    font-size: 37px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #ff9100;
+  }
+
+  .PreferentialModalbt {
+    text-decoration: none;
+    padding: 0vh 0vh 6vh 0vh;
+    text-decoration: none;
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+  }
+
+  .PreferentialModalbt .Cancelbt {
+    width: 350px;
+    border-radius: 10px;
+    color: white;
+    padding: 1vh 6vh;
+    text-decoration: none;
+    background-color: #ff0e0e;
+    margin-right: auto;
+    margin-right: 5px;
+  }
+
+  .PreferentialModalbt .Confirmarbt {
+    width: 350px;
+    border-radius: 10px;
+    color: white;
+    padding: 1vh 6vh;
+    text-decoration: none;
+    margin-left: auto;
+    margin-left: 5px;
+    background-color: #06b700;
+  }
+}

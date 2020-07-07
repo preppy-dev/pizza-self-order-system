@@ -1,0 +1,19 @@
+{
+  "folders": [
+	{
+		"path": "../../../../Desktop/TP WEB/Vanila javascript/FORM VALIDATOR"
+	},
+	{
+		"path": "../../../../Desktop/TP WEB/Vanila javascript"
+	},
+	{
+		"path": ".."
+	},
+	{
+		"path": "../../../my-app"
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "Vanila javascript"
+  }
+}
