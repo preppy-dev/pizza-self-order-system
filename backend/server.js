@@ -16,13 +16,17 @@ app.use("/api/users", userRoute);
 //app.use("/api/products", productRoute);
 app.get("/api/products/:id", (req, res) => {
   const productId = req.params.id;
-  const product = data.find((x) => x._id === productId);
+  const product = data.products.find((x) => x._id === productId);
   if (product) res.send(product);
   else res.status(404).send({ msg: "Product Not found." });
 });
 
 app.get("/api/products", (req, res) => {
-  res.send(data);
+  res.send(data.products);
+});
+
+app.get("/api/categories", (req, res) => {
+  res.send(data.categories);
 });
 
 app.get("/api/config/session", (req, res) => {

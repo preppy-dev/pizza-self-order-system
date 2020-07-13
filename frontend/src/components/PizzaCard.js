@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useState,useRef } from "react";
 import { Link } from "react-router-dom";
 import "../pages/Sabores/Sabores.css";
 
-const PizzaCard = ({ sabor, price, category, image, ingredients, pizza }) => {
+const PizzaCard = ({ sabor, price, category, image, ingredients, id}) => {
   const [precoPizzaItem, setPrecoPizzaItem] = useState();
+  const inputRef = useRef();
+
+  
 
   function checkUsePrecoPizzaCatConfig() {
     fetch("http://192.168.1.104:4000/api/config/session")
@@ -17,8 +20,9 @@ const PizzaCard = ({ sabor, price, category, image, ingredients, pizza }) => {
   }
   checkUsePrecoPizzaCatConfig();
 
+
   return (
-    <Link className="pizzacard no-underline" to={"/pizzasingle/" + pizza._id}>
+    <Link ref={inputRef} className="pizzacard no-underline" to={"/pizzasingle/"+id}>
       <div className="center bg-white b--black-10">
         <div className="tc">
           <img

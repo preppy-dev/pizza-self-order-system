@@ -1,9 +1,9 @@
 import React,{useState} from "react"
-import {Link} from "react-router-dom"
+import {Link,withRouter} from "react-router-dom"
 
 
 
-const TipoCard = () =>{
+const TipoCard = ({name,price,routeName,image,history,match}) =>{
 
   const [precoCategoriaItem, setPrecoCategoriatem] = useState();
 
@@ -20,14 +20,16 @@ const TipoCard = () =>{
   checkUsePrecoPizzaCatConfig();
 
   return(
-    <Link className="tipobox" to="/category/Tradicional">
+    
+   
+    <Link className="tipobox" onClick={() => history.push(`${match.url}/${routeName}`)}>
             <div className="Tipo">
-              <img src={PizzaImg} className="tipoimage" alt="tipoimage" />
+              <img src={process.env.PUBLIC_URL + `/assets/${name}/${image}`} className="tipoimage" alt="tipoimage" />
             </div>
-            <h1> PIZZA TRADICIONAL </h1>
-            <h2 className={precoCategoriaItem}> VALOR : 24 $R </h2>
+            <h1> PIZZA {name} </h1>
+            <h2 className={precoCategoriaItem}> VALOR : $R {price} </h2>
           </Link>
   )
 }
 
-export default TipoCard
+export default withRouter(TipoCard);

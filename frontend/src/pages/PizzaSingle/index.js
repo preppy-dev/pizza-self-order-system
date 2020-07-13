@@ -9,6 +9,8 @@ import "./PizzaSingle.css";
 import { toArray } from "antd/lib/form/util";
 import { Checkbox } from "antd";
 import HomeButton from "../../components/HomeButton";
+import {apiConfig} from "../../services/api"
+
 
 //import "antd/dist/antd.css";
 
@@ -18,6 +20,7 @@ export const testArray = [];
 
 
 const PizzaSingle = (props) => {
+  console.log(props)
   //const checkIngredient = useContext(CheckIngredientContext);
   const value = useContext(CheckIngredientContext);
  /*  const { checked, SetCheckIngredientContext } = value; */
@@ -28,7 +31,7 @@ const PizzaSingle = (props) => {
   const [precoPizzaItem, setPrecoPizzaItem] = useState();
 
   const [checkValue, SetcheckValue] = useState();
-  const [returnToCategory, setreturnToCategory] = useState();
+  
 
   const [qty, setQty] = useState(1);
   const quantyDefaut = () => {
@@ -59,7 +62,7 @@ const PizzaSingle = (props) => {
   };
   
 
-  function setArrayIngredients(){
+  /* function setArrayIngredients(){
      if (cont === 5){
       //console.log([...toArray(product)])
        [...toArray(product.ingredients)].map((item) => 
@@ -73,24 +76,19 @@ const PizzaSingle = (props) => {
         console.log(testArray);
     } 
     cont++;
-  }
+  } */
 
-  function checkUsePrecoPizzaConfig() {
-    fetch("http://192.168.1.104:4000/api/config/session")
+  useEffect(() => {
+    fetch(apiConfig)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
         if (data.precoPizza === 0) {
           setPrecoPizzaItem("precoPizza");
         }
-        if (data.categoria === 0) {
-          setreturnToCategory("/sabores");
-        } else {
-          setreturnToCategory("/tipo");
-        }
+        
       });
-  }
-
+  }, [setPrecoPizzaItem])
   
   function onChangeHandler(e) {
     /* console.log(testArray);
@@ -111,8 +109,8 @@ const PizzaSingle = (props) => {
     //testArray.push(e.target.id);
     console.log(index);
   }
-  checkUsePrecoPizzaConfig();
-  setArrayIngredients();
+
+  //setArrayIngredients();
  
   //console.log([...toArray(product)])
   return loading ? (
@@ -125,7 +123,7 @@ const PizzaSingle = (props) => {
       
       <header className="TopSingle">
         <h1 className="titlesingles"> Remova itens </h1>
-        <Link className="return" onClick={() => props.history.goBack()}>
+        <Link className="return" onClick={()=>{props.history.goBack();}}>
           <img src={returnImg} className="" alt="logo" />
         </Link>
         <HomeButton/>

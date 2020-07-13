@@ -1,32 +1,56 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState,useEffect } from "react";
 import { Link,withRouter } from "react-router-dom";
 import "./Select.css";
 import SabosImg from "../../assets/1sabos.png";
 import SaboresImg from "../../assets/2sabores.png";
 import returnImg from "../../assets/return.png";
 import { OrderListContext } from "../../Context/OrderListContext";
+import {apiConfig} from "../../services/api"
+
 
 const Select = (props) => {
   const CurrentOrderType = useContext(OrderListContext);
   const [selectItem, setSelectItem] = useState();
-  function checkUseSelectConfig() {
-    fetch("http://192.168.1.104:4000/api/config/session")
+  const [selectItem2, setSelectItem2] = useState();
+  const [backSatate, setbackSatate] = useState();
+
+/* configuração API */
+  useEffect(() => {
+    fetch(apiConfig)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        //console.log(data);
         if (data.categoria === 0) {
           setSelectItem("/sabores");
         } else {
           setSelectItem("/tipo");
         }
+        if (data.categoria === 0) {
+          setSelectItem2("/sabores2");
+        } else {
+          setSelectItem2("/tipo2");
+        }
       });
-  }
-  checkUseSelectConfig();
+  }, [setSelectItem,setSelectItem2])
+  
+  useEffect(() => {
+    fetch(apiConfig)
+      .then((res) => res.json())
+      .then((data) => {
+        //console.log(data);
+        if (data.preferencial === 1) {
+          setbackSatate("/preferential");
+        } else {
+          setbackSatate("/");
+        }
+      });
+  }, [setbackSatate])
+
   return (
     <div className="Select">
       <div className="selectmain">
         <header className="Select_head">
-          <Link className="Selectreturn" onClick={() => props.history.goBack()}>
+          <Link className="Selectreturn" to={backSatate}>
             <img src={returnImg} className="" alt="logo" />
           </Link>
 
@@ -42,7 +66,7 @@ const Select = (props) => {
           </div>
 
           <div className="select_">
-            <Link className="boxselect Sabores2" to={selectItem}>
+            <Link className="boxselect Sabores2" to={selectItem2}>
               <img src={SaboresImg} className="Selecimg" alt="" />
             </Link>
             <h2 select_h2> 2 Sabores </h2>

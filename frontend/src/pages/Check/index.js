@@ -9,12 +9,11 @@ import "./Check.css";
 import { ModelContext } from "../../Context/ModelContext";
 import { addToCart, removeFromCart,resetCart } from "../../actions/cartAction";
 import { testArray } from "../PizzaSingle";
+import {apiConfig} from "../../services/api"
 
 import { useSelector, useDispatch } from "react-redux";
 
 
-
-var cont = 1;
 
 const Check = (props) => {
   const dataIngredient = [
@@ -88,27 +87,23 @@ const Check = (props) => {
     //setDataIngredients(dataIngredients.filter((el) => el.id !== id));
   };
 
-  //ASADA FUNCTION
-  function testFunc() {
-    console.log(cont);
-    if (cont === 4) {
-      console.log("Entrou");
-      cartItems.map((item) =>
-        item.ingredients.map((l) => {
-          for (let value of testArray) {
-            if (value === l._id) {
-              var element = document.querySelector("#ing" + l._id);
-              element.classList.add("remove");
-            }
-          }
-        })
-      );
-    }
-    cont++;
-  }
+  useEffect(() => {
+    cartItems.map((item) =>
+    item.ingredients.map((l) => {
+      for (let value of testArray) {
+        if (value === l._id) {
+          var element = document.querySelector("#ing" + l._id);
+          element.classList.add("remove");
+        }
+      }
+    })
+  );
+  }, [cartItems])
+  
 
-  function checkUseAsadaConfig() {
-    fetch("http://192.168.1.104:4000/api/config/session")
+/* configuração API ASADA */
+useEffect(() => {
+  fetch(apiConfig)
       .then((res) => res.json())
       .then((data) => {
         if (data.assada === 0) {
@@ -119,10 +114,8 @@ const Check = (props) => {
           setPrecoPizzaItem("precoPizza");
         }
       });
-  }
-  checkUseAsadaConfig();
-  testFunc();
-  ///////////////////
+}, [setPrecoPizzaItem])
+
 
   return (
     <div className="Check">

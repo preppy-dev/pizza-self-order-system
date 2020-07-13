@@ -9,7 +9,7 @@ export default (props) => {
     window.location = "/select";
   }
   const value = useContext(OrderListContext);
-  const { orderType, SetOrderListContext } = value;
+  const { SetOrderList } = value;
   return (
     <div className="PreferentialModal">
       <div className="mainprefmodal">
@@ -17,6 +17,7 @@ export default (props) => {
           <img src={preferentialillustration} alt="" />
 
           <h1>confirme por favor</h1>
+          
         </div>
 
         <div className="PreferentialModalbt">
@@ -28,11 +29,11 @@ export default (props) => {
             defaultValue="Preferential"
             onClick={(e) => {
               e.preventDefault();
-              SetOrderListContext({ [e.target.orderType]: e.target.value });
-              url();
+              SetOrderList({prioridade:"Preferencial"});
+             url();
             }}
             className="Confirmarbt"
-            to="/success"
+
           >
             <h1>SIM</h1>
           </Link>

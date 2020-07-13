@@ -2,6 +2,9 @@ import {
   PRODUCT_LIST_FAIL,
   PRODUCT_LIST_REQUEST,
   PRODUCT_LIST_SUCCESS,
+  PRODUCT_LIST_TYPE_FAIL,
+  PRODUCT_LIST_TYPE_REQUEST,
+  PRODUCT_LIST_TYPE_SUCCESS,
   PRODUCT_DETAILS_REQUEST,
   PRODUCT_DETAILS_SUCCESS,
   PRODUCT_DETAILS_FAIL,
@@ -20,6 +23,18 @@ function productListReducer(state = { products: [] }, action) {
     case PRODUCT_LIST_SUCCESS:
       return { loading: false, products: action.payload };
     case PRODUCT_LIST_FAIL:
+      return { loading: false, error: action.payload };
+    default:
+      return state;
+  }
+}
+function productListTypeReducer(state = { products: [] }, action) {
+  switch (action.type) {
+    case PRODUCT_LIST_TYPE_REQUEST:
+      return { loading: true, products: [] };
+    case PRODUCT_LIST_TYPE_SUCCESS:
+      return { loading: false, products: action.payload };
+    case PRODUCT_LIST_TYPE_FAIL:
       return { loading: false, error: action.payload };
     default:
       return state;
@@ -70,4 +85,5 @@ export {
   productDetailsReducer,
   productDeleteReducer,
   productSaveReducer,
+  productListTypeReducer,
 };

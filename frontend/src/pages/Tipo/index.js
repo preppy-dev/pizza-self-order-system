@@ -1,25 +1,38 @@
-import React,{useState} from "react";
+import React,{useEffect,useState} from "react";
 import { Link,withRouter } from "react-router-dom";
 import "./Tipo.css";
-import PizzaImg from "../../assets/pizza1.png";
 import returnImg from "../../assets/return.png";
+import { listProducts } from "../../actions/productActions";
+import TipoCardList from "../../components/TipoCardList";
+import {Spin } from "antd";
+import { LoadingOutlined } from "@ant-design/icons";
+
+import { useSelector, useDispatch } from "react-redux";
+import {apiConfig} from "../../services/api"
+
+
+
 
 const Tipo = (props) => {
-
-  const [precoCategoriaItem, setPrecoCategoriatem] = useState();
-
-  function checkUsePrecoPizzaCatConfig() {
-    fetch("http://192.168.1.104:4000/api/config/session")
+console.log(props)
+ const [state, setstate] = useState([])
+  const dispatch = useDispatch();
+  const category = props.match.params.id ? props.match.params.id : "";
+  const productList = useSelector((state) => state.productList);
+  
+  useEffect(()=>{
+    fetch("http://192.168.1.104:4000/api/categories")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
-        if (data.precoCategoria === 0) {
-          setPrecoCategoriatem("precoCategoria");
-        }
+        //console.log(data)
+      setstate (data)
+        //setBgImage(data.telaInicial);
+        
+        //console.log(state)
       });
-  }
-  checkUsePrecoPizzaCatConfig();
-
+  },[setstate,state])
+ 
+  const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />;
   return (
     <div className="TipoBlock">
       <div className="tipo_main">
@@ -32,29 +45,8 @@ const Tipo = (props) => {
         </header>
 
         <div className="tipos">
-          <Link className="tipobox" to="/category/Tradicional">
-            <div className="Tipo">
-              <img src={PizzaImg} className="tipoimage" alt="tipoimage" />
-            </div>
-            <h1> PIZZA TRADICIONAL </h1>
-            <h2 className={precoCategoriaItem}> VALOR : 24 $R </h2>
-          </Link>
+          <TipoCardList categories={state}/>
 
-          <Link className="tipobox" to="/category/Especial">
-            <div className="Tipo">
-              <img src={PizzaImg} className="tipoimage" alt="tipoimage" />
-            </div>
-            <h1> PIZZA ESPECIAL </h1>
-            <h2 className={precoCategoriaItem}> VALOR : 24 $R </h2>
-          </Link>
-
-          <Link className="tipobox" to="/category/Doce">
-            <div className="Tipo">
-              <img src={PizzaImg} className="tipoimage" alt="tipoimage" />
-            </div>
-            <h1> PIZZA DOCE </h1>
-            <h2 className={precoCategoriaItem}> VALOR : 24 $R </h2>
-          </Link>
         </div>
       </div>
     </div>

@@ -2,11 +2,18 @@ import React from "react";
 import TipoCard from "./TipoCard";
 
 const TipoCardList = ({categories})=>{
-  categories.map((category)=>{
+  const cardComponent = categories.map((type)=>{
 
-   <TipoCard />
+    return (<TipoCard 
+   key={type.id}
+   name={type.categoryName}
+   price={type.price}
+   routeName={type.routeName}
+    image={type.image}
+   />
+   );
   })
-
+  return <>{cardComponent}</>
 }
 
 export default TipoCardList;

@@ -1,16 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Inicio.css";
 import Homebtiinit from "../../assets/btinicio.png";
+import {apiConfig} from "../../services/api"
 
 import { useState } from "react";
 
 const App = (props) => {
-  const [pref, setPref] = useState();
-  const [backgroundImg, setBgImage] = useState();
+  const [pref, setPref] = useState("/");
+  const [backgroundImg, setBgImage] = useState(null);
 
-  function checkUseConfig() {
-    fetch("http://192.168.1.104:4000/api/config/session")
+useEffect(() => {
+  fetch(apiConfig)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -24,10 +25,8 @@ const App = (props) => {
         //setBgImage(data.telaInicial);
         setBgImage(data.telaInicial);
       });
-  }
+}, [setPref,setBgImage])
 
-
-  checkUseConfig();
   return (
     <div style={{ backgroundImage: backgroundImg }} className="App">
       <h1>

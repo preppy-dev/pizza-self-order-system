@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { Link } from "react-router-dom";
 import successillustration from "../../assets/successillustration.png";
 import "./Success.css";
 import {resetCart} from "../../actions/cartAction";
 
 import {  useDispatch } from "react-redux";
+import {apiConfig} from "../../services/api"
+
 
 
 const Success = () => {
@@ -15,16 +17,15 @@ const Success = () => {
     dispatch(resetCart(productId));
   };
 
-  function checkUseConfigBgsuccess() {
-    fetch("http://192.168.1.104:4000/api/config/session")
+  /* configuração API */
+  useEffect(() => {
+    fetch(apiConfig)
       .then((res) => res.json())
       .then((data) => {
         //setBgImage(data.telaFinal);
         setBgImage(data.telaFinal);
       });
-  }
-
-  checkUseConfigBgsuccess();
+  }, [setBgImage])
 
   return (
     <div style={{ backgroundImage: backgroundImg }} className="Success">

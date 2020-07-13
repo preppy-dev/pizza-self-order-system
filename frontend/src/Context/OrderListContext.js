@@ -9,7 +9,7 @@ const OrderListContextProvider = props => {
   });
 
   return (
-    <OrderListContext.Provider value={[orderList,SetOrderList]}>
+    <OrderListContext.Provider value={{orderList,SetOrderList}}>
       {props.children}
     </OrderListContext.Provider>
   );
